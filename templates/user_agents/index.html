@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+<div class="card mt-5">
+    <div class="card-title">
+        <h3>User Agents</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>SL</th>
+                <th>Browser</th>
+                <th>OS</th>
+                <th>Device</th>
+                <th>Tablet</th>
+                <th>PC</th>
+                <th>Bot</th>
+                <th>Touch Capable</th>
+            </tr>
+            {% for agent in agents %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ agent.browser }}</td>
+                    <td>{{ agent.os }}</td>
+                    <td>{{ agent.device }}</td>
+                    <td>{{ agent.is_tablet }}</td>
+                    <td>{{ agent.is_pc }}</td>
+                    <td>{{ agent.is_bot }}</td>
+                    <td>{{ agent.is_touch_capable }}</td>
+                </tr>
+            {% endfor %}
+    
+        </table>
+    </div>
+</div>
+    
+{% endblock %}
